@@ -1,19 +1,18 @@
-Zhu Zi-hao Academic Homepage — Final Redesign
+Zhu Zi-hao Academic Homepage — Final Polished Version
 
-Design direction:
-- Inspired by the information architecture and density of cen-jun.com
-- Minimal academic layout rather than a commercial landing page
-- Left profile column
-- Compact Biography / Education / Experiences / Publications / Contact sections
-- Institution photos used only as small supporting thumbnails
-
-Verified terminology:
-- 生药学: Pharmacognosy
-- 中药学: Chinese Materia Medica
-- M.Sc. in Pharmacognosy
+Final terminology:
+- Young Scientists Fund (Category C), National Natural Science Foundation of China (NSFC)
+- Grant No. 826078213
 - Ph.D. in Chinese Materia Medica
+- M.Sc. in Pharmacognosy
 - Postdoctoral Researcher, Department of Pharmacognosy, School of Pharmacy, Naval Medical University
 
-Deploy:
-Upload index.html and the entire assets/ folder to the root of your GitHub repository.
-Vercel will redeploy automatically.
+Final design refinements:
+- "About" renamed to "Biography"
+- More restrained academic blue
+- Tighter typography and section spacing
+- Slightly smaller portrait
+- More consistent education/experience thumbnails
+- Cleaner academic information density
+
+Upload index.html and the entire assets/ folder to the root of the GitHub repository.

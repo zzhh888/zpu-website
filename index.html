@@ -8,16 +8,16 @@
   <title>Zhu Zi-hao</title>
   <style>
     :root{
-      --ink:#242424;
-      --muted:#666;
+      --ink:#25282b;
+      --muted:#68707a;
       --light:#8a8a8a;
-      --line:#e7e7e7;
-      --link:#135f9c;
-      --link-hover:#0b4778;
+      --line:#e3e7eb;
+      --link:#1f5f99;
+      --link-hover:#174a78;
       --paper:#fff;
       --soft:#f7f7f7;
-      --max:1030px;
-      --side:205px;
+      --max:1000px;
+      --side:190px;
     }
 
     *{box-sizing:border-box}
@@ -27,8 +27,8 @@
       background:var(--paper);
       color:var(--ink);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      font-size:15.5px;
-      line-height:1.68;
+      font-size:15px;
+      line-height:1.64;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
@@ -78,8 +78,8 @@
     .shell{
       display:grid;
       grid-template-columns:var(--side) minmax(0,1fr);
-      gap:48px;
-      padding:42px 0 60px;
+      gap:42px;
+      padding:38px 0 56px;
       align-items:start;
     }
 
@@ -89,16 +89,17 @@
       top:82px;
     }
     .portrait{
-      width:166px;
-      height:218px;
+      width:154px;
+      height:202px;
       object-fit:cover;
       object-position:center 15%;
       border-radius:3px;
       box-shadow:0 0 0 1px rgba(0,0,0,.08);
-      margin-bottom:18px;
+      margin-bottom:16px;
     }
     .profile h1{
-      font-size:27px;
+      color:#1f5f99;
+      font-size:26px;
       line-height:1.14;
       margin:0 0 8px;
       font-weight:650;
@@ -133,15 +134,16 @@
     /* Main content */
     .content{min-width:0}
     section{
-      margin-bottom:40px;
+      margin-bottom:34px;
       scroll-margin-top:76px;
     }
     h2{
-      font-size:23px;
+      color:#1f5f99;
+      font-size:22px;
       font-weight:650;
       line-height:1.25;
-      margin:0 0 15px;
-      padding-bottom:6px;
+      margin:0 0 14px;
+      padding-bottom:7px;
       border-bottom:1px solid var(--line);
       letter-spacing:-.02em;
     }
@@ -178,7 +180,7 @@
     }
     .edu{
       display:grid;
-      grid-template-columns:1fr 118px;
+      grid-template-columns:1fr 112px;
       gap:18px;
       align-items:center;
     }
@@ -186,6 +188,7 @@
       min-width:0;
     }
     .edu-school{
+      color:#1c4f7a;
       font-weight:650;
       margin-bottom:2px;
     }
@@ -197,8 +200,8 @@
       color:var(--muted);
     }
     .edu-thumb{
-      width:118px;
-      height:67px;
+      width:112px;
+      height:64px;
       object-fit:cover;
       border-radius:3px;
       border:1px solid #e1e1e1;
@@ -211,17 +214,19 @@
     }
     .exp{
       display:grid;
-      grid-template-columns:126px minmax(0,1fr) 132px;
+      grid-template-columns:118px minmax(0,1fr) 124px;
       column-gap:17px;
       align-items:start;
     }
     .exp-date{
-      color:var(--muted);
+      color:#1f5f99;
+      font-weight:600;
       font-size:13.5px;
       padding-top:1px;
       white-space:nowrap;
     }
     .exp-title{
+      color:#1c4f7a;
       font-size:15.5px;
       font-weight:650;
       line-height:1.45;
@@ -232,14 +237,41 @@
       margin-top:4px;
     }
     .exp-thumb{
-      width:132px;
-      height:78px;
+      width:124px;
+      height:72px;
       object-fit:cover;
       border-radius:3px;
       border:1px solid #e1e1e1;
     }
 
     /* Placeholder publications are intentionally understated */
+
+    .honors-list{
+      display:grid;
+      gap:13px;
+    }
+    .honor{
+      display:grid;
+      grid-template-columns:92px minmax(0,1fr);
+      gap:16px;
+      align-items:start;
+    }
+    .honor-year{
+      color:#1f5f99;
+      font-weight:650;
+      font-size:13.5px;
+      padding-top:1px;
+    }
+    .honor-title{
+      font-weight:650;
+      color:#2d2d2d;
+    }
+    .honor-meta{
+      color:var(--muted);
+      font-size:13.8px;
+      margin-top:2px;
+    }
+
     .publication-note{
       color:var(--muted);
       font-size:14px;
@@ -331,11 +363,12 @@
 <body>
   <header class="topbar">
     <nav class="page nav" aria-label="Primary navigation">
-      <a class="home" href="#about">Zhu Zi-hao</a>
-      <a href="#about">Biography</a>
-      <a href="#experience">Experiences</a>
-      <a href="#publications">Publications</a>
+      <a class="home" href="#biography">Zhu Zi-hao</a>
+      <a href="#biography">Biography</a>
       <a href="#education">Education</a>
+      <a href="#experience">Experiences</a>
+      <a href="#honors">Honors</a>
+      <a href="#publications">Publications</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -353,7 +386,7 @@
             Naval Medical University
           </div>
           <div class="location">Shanghai, China</div>
-          <div class="email">zh6876 [at] 126.com</div>
+          <div class="email">zh6876@126.com</div>
           <div class="quicklinks">
             <a href="mailto:zh6876@126.com">Email</a>
             <span class="disabled">Scholar</span>
@@ -365,8 +398,8 @@
     </aside>
 
     <main class="content">
-      <section id="about" class="about">
-        <h2>About</h2>
+      <section id="biography" class="about">
+        <h2>Biography</h2>
         <p>
           I am a Postdoctoral Researcher in the Department of Pharmacognosy, School of Pharmacy,
           Naval Medical University. My research focuses on interactions between medicinal plants
@@ -446,6 +479,34 @@
             </div>
             <img class="exp-thumb" src="assets/clifford-hospital.png"
                  alt="Clifford Hospital">
+          </article>
+        </div>
+      </section>
+
+
+      <section id="honors">
+        <h2>Honors & Funding</h2>
+        <div class="honors-list">
+          <article class="honor">
+            <div class="honor-year">2026</div>
+            <div>
+              <div class="honor-title">Young Scientists Fund (Category C), National Natural Science Foundation of China (NSFC)</div>
+              <div class="honor-meta">Grant No. 826078213</div>
+            </div>
+          </article>
+
+          <article class="honor">
+            <div class="honor-year">2026</div>
+            <div>
+              <div class="honor-title">Third Prize, Young Scholars' Paper Presentation, Shanghai Botanical Society</div>
+            </div>
+          </article>
+
+          <article class="honor">
+            <div class="honor-year">2025</div>
+            <div>
+              <div class="honor-title">Third Prize, Young Scholars' Paper Presentation, Shanghai Botanical Society</div>
+            </div>
           </article>
         </div>
       </section>
