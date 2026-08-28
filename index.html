@@ -1,102 +1,356 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ZPU 个人主页" />
-  <title>ZPU · Personal Homepage</title>
+  <meta name="description" content="Academic homepage of Zhu Zi-hao, Postdoctoral Researcher in Pharmacognosy at Naval Medical University." />
+  <title>Zhu Zi-hao | Academic Homepage</title>
   <style>
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,"Microsoft YaHei",sans-serif;background:#f6f7fb;color:#16181d;line-height:1.7}
-    .wrap{width:min(1080px,calc(100% - 40px));margin:auto}
-    header{position:sticky;top:0;background:rgba(246,247,251,.92);backdrop-filter:blur(12px);border-bottom:1px solid #e6e8ee;z-index:10}
-    nav{height:68px;display:flex;align-items:center;justify-content:space-between}
-    .logo{font-weight:800;letter-spacing:.12em}
-    nav a{color:#505665;text-decoration:none;margin-left:24px;font-size:14px}
-    .hero{min-height:72vh;display:grid;grid-template-columns:1.4fr .7fr;gap:60px;align-items:center;padding:70px 0}
-    .tag{color:#315efb;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
-    h1{font-size:72px;line-height:1.05;margin:14px 0 22px;letter-spacing:-.04em}
-    .lead{font-size:20px;color:#666d7d;max-width:650px}
-    .btns{display:flex;gap:12px;margin-top:28px}
-    .btn{display:inline-block;padding:11px 17px;border-radius:10px;text-decoration:none;font-weight:700}
-    .btn.primary{background:#16181d;color:white}.btn.secondary{background:white;color:#16181d;border:1px solid #dfe2e9}
-    .card{background:white;border:1px solid #e3e6ec;border-radius:22px;padding:28px;box-shadow:0 18px 50px rgba(20,24,35,.07)}
-    .avatar{width:74px;height:74px;border-radius:20px;background:#16181d;color:white;display:grid;place-items:center;font-size:30px;font-weight:800;margin-bottom:20px}
-    section{padding:76px 0}.section-title{display:flex;align-items:center;gap:15px;margin-bottom:28px}.section-title span{color:#315efb;font-weight:800}.section-title h2{margin:0;font-size:30px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.item{background:white;border:1px solid #e3e6ec;border-radius:16px;padding:22px}.item p{color:#697080;margin-bottom:0}
-    .project{display:flex;justify-content:space-between;gap:20px;background:white;border:1px solid #e3e6ec;border-radius:16px;padding:22px;margin-bottom:12px}
-    .contact{background:#16181d;color:white;border-radius:22px;padding:36px}.contact p{color:#c8cbd3}
-    footer{padding:30px 0 45px;color:#7c8391;font-size:13px;display:flex;justify-content:space-between}
-    @media(max-width:760px){.hero{grid-template-columns:1fr;gap:30px;min-height:auto}h1{font-size:50px}.grid{grid-template-columns:1fr}nav .links{display:none}footer{flex-direction:column;gap:8px}}
+    :root{
+      --bg:#fff;
+      --text:#202124;
+      --muted:#687078;
+      --line:#e5e7eb;
+      --blue:#1769aa;
+      --soft:#f7f9fb;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.65;
+    }
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{display:block;max-width:100%}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{
+      min-height:64px;
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .brand{font-size:18px;font-weight:700;color:#111}
+    .navlinks{display:flex;gap:21px;font-size:14px}
+    .navlinks a{color:#444;text-decoration:none}
+    .navlinks a:hover{color:var(--blue)}
+
+    .layout{
+      display:grid;
+      grid-template-columns:250px 1fr;
+      gap:58px;
+      padding:50px 0 72px;
+    }
+    .sidebar{position:sticky;top:94px;align-self:start}
+    .profile-photo{
+      width:178px;
+      aspect-ratio:3/4;
+      object-fit:cover;
+      object-position:center 16%;
+      border-radius:8px;
+      border:1px solid var(--line);
+      margin-bottom:20px;
+      box-shadow:0 8px 24px rgba(0,0,0,.07);
+    }
+    .name{
+      margin:0 0 5px;
+      font-size:30px;
+      line-height:1.15;
+      letter-spacing:-.025em;
+    }
+    .role{font-size:15px;font-weight:600;margin-bottom:8px}
+    .side-line{font-size:14px;color:#4c5258;margin:6px 0}
+    .side-links{
+      display:flex;flex-wrap:wrap;gap:10px 13px;
+      margin-top:18px;font-size:14px;
+    }
+
+    section{margin-bottom:48px;scroll-margin-top:86px}
+    h2{
+      margin:0 0 18px;
+      padding-bottom:8px;
+      border-bottom:1px solid var(--line);
+      font-size:25px;
+      letter-spacing:-.02em;
+    }
+    h3{margin:0 0 5px;font-size:18px}
+    p{margin:0 0 13px}
+    .muted{color:var(--muted)}
+    .small{font-size:14px}
+
+    .interests{padding-left:20px;margin:8px 0 0}
+    .interests li{margin:6px 0}
+
+    .timeline{display:grid;gap:25px}
+    .timeline-row{
+      display:grid;
+      grid-template-columns:135px 1fr;
+      gap:22px;
+      align-items:start;
+    }
+    .date{font-size:14px;color:var(--muted);padding-top:2px}
+    .timeline-content p{margin:2px 0}
+    .institution-card{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:22px;
+      margin-top:14px;
+      align-items:center;
+      background:var(--soft);
+      border:1px solid var(--line);
+      border-radius:9px;
+      overflow:hidden;
+    }
+    .institution-card .copy{padding:18px 0 18px 18px}
+    .institution-card img{
+      width:100%;height:190px;object-fit:cover;
+    }
+
+    .experience-card{
+      display:grid;
+      grid-template-columns:1fr 240px;
+      gap:22px;
+      padding:18px;
+      border:1px solid var(--line);
+      border-radius:9px;
+      margin-top:12px;
+      background:#fff;
+    }
+    .experience-card img{
+      width:240px;height:130px;object-fit:cover;border-radius:6px;
+    }
+
+    .publication{
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:22px;
+      margin-bottom:24px;
+      align-items:start;
+    }
+    .pub-visual{
+      width:180px;height:108px;border:1px solid var(--line);
+      border-radius:6px;background:var(--soft);
+      display:flex;align-items:center;justify-content:center;
+      color:#969da5;font-size:13px;
+    }
+    .pub-title{font-size:17px;font-weight:700;line-height:1.45}
+    .pub-meta{font-size:14px;color:#565d64;margin-top:5px}
+    .pub-links{font-size:14px;margin-top:7px}
+    .pub-links a{margin-right:12px}
+
+    .placeholder{
+      padding:17px 18px;
+      border:1px dashed #c9ced4;
+      border-radius:7px;
+      background:#fafbfc;
+      color:#737b84;
+      font-size:14px;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:24px 0 42px;
+      color:#777;
+      font-size:13px;
+    }
+
+    @media(max-width:850px){
+      .navlinks{display:none}
+      .layout{grid-template-columns:1fr;gap:34px}
+      .sidebar{position:static}
+      .profile-photo{width:150px}
+      .timeline-row{grid-template-columns:1fr;gap:3px}
+      .institution-card,.experience-card{grid-template-columns:1fr}
+      .institution-card .copy{padding:18px}
+      .experience-card img{width:100%;height:auto}
+      .publication{grid-template-columns:1fr}
+      .pub-visual{width:100%;height:180px}
+    }
   </style>
 </head>
 <body>
+
 <header>
   <nav class="wrap">
-    <div class="logo">ZPU</div>
-    <div class="links">
-      <a href="#about">关于我</a>
-      <a href="#research">研究方向</a>
-      <a href="#projects">项目</a>
-      <a href="#contact">联系</a>
+    <div class="brand">Zhu Zi-hao</div>
+    <div class="navlinks">
+      <a href="#biography">Biography</a>
+      <a href="#interests">Research Interests</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 </header>
 
-<main class="wrap">
-  <section class="hero">
-    <div>
-      <div class="tag">Graduate Student · Personal Website</div>
-      <h1>你好，我是 ZPU。</h1>
-      <p class="lead">这里是我的个人主页，用于记录研究、项目、学习过程与长期积累。</p>
-      <div class="btns">
-        <a class="btn primary" href="#projects">查看项目</a>
-        <a class="btn secondary" href="#contact">联系我</a>
+<div class="wrap layout">
+
+  <aside class="sidebar">
+    <img class="profile-photo" src="assets/profile.png" alt="Portrait of Zhu Zi-hao" />
+    <h1 class="name">Zhu Zi-hao</h1>
+    <div class="role">Postdoctoral Researcher in Pharmacognosy</div>
+    <div class="side-line">Department of Pharmacognosy</div>
+    <div class="side-line">Naval Medical University</div>
+    <div class="side-line">Shanghai, China</div>
+    <div class="side-line">Email: zh6876@126.com</div>
+
+    <div class="side-links">
+      <a href="mailto:zh6876@126.com">Email</a>
+      <a href="#" title="To be added">Google Scholar</a>
+      <a href="#" title="To be added">ORCID</a>
+      <a href="#" title="To be added">GitHub</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <section id="biography">
+      <h2>Biography</h2>
+      <p>
+        I am a <strong>Postdoctoral Researcher in Pharmacognosy</strong> at
+        <strong>Naval Medical University</strong>. My current research focuses on
+        <strong>medicinal plant–microbe interactions</strong>, with an emphasis on understanding
+        the ecological and functional relationships between medicinal plants and their associated microorganisms.
+      </p>
+      <p>
+        My academic background spans <strong>pharmacognosy</strong> and
+        <strong>Chinese materia medica</strong>, complemented by professional experience in a hospital pharmacy department.
+        I am particularly interested in integrating pharmacognostic, microbiological, and analytical approaches
+        to investigate medicinal plant resources, plant-associated microbiomes, and bioactive natural products.
+      </p>
+    </section>
+
+    <section id="interests">
+      <h2>Research Interests</h2>
+      <ul class="interests">
+        <li>Medicinal plant–microbe interactions</li>
+        <li>Pharmacognosy</li>
+        <li>Plant-associated microbiomes</li>
+        <li>Medicinal plant resources and quality evaluation</li>
+        <li>Bioactive natural products from medicinal plants and associated microorganisms</li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="timeline">
+        <div class="timeline-row">
+          <div class="date">2020 – 2023</div>
+          <div class="timeline-content">
+            <h3>Shanghai University of Traditional Chinese Medicine</h3>
+            <p>Ph.D. in Chinese Materia Medica</p>
+          </div>
+        </div>
+
+        <div class="timeline-row">
+          <div class="date">2016 – 2019</div>
+          <div class="timeline-content">
+            <h3>Jiangxi University of Chinese Medicine</h3>
+            <p>Master's Degree in Pharmacognosy</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="avatar">Z</div>
-      <h2>ZPU</h2>
-      <p>研究生 · 科研 / 编程 / 数据分析</p>
-      <p>🌐 zpu.bbroot.com</p>
-    </div>
-  </section>
+    </section>
 
-  <section id="about">
-    <div class="section-title"><span>01</span><h2>关于我</h2></div>
-    <div class="card">
-      <p>我是一名研究生，目前正在学习如何进行系统的研究、数据分析和技术实践。这个网站会持续记录我的研究方向、项目经历和阶段性成果。</p>
-    </div>
-  </section>
+    <section id="experience">
+      <h2>Research & Professional Experience</h2>
 
-  <section id="research">
-    <div class="section-title"><span>02</span><h2>研究方向</h2></div>
-    <div class="grid">
-      <div class="item"><strong>研究方向 A</strong><p>后续填写你的主要研究课题与研究问题。</p></div>
-      <div class="item"><strong>研究方法</strong><p>可填写实验、统计分析、机器学习、访谈等方法。</p></div>
-      <div class="item"><strong>长期兴趣</strong><p>记录未来希望持续深入的学术或技术方向。</p></div>
-    </div>
-  </section>
+      <div class="timeline">
+        <div class="timeline-row">
+          <div class="date">2024 – Present</div>
+          <div class="timeline-content">
+            <h3>Naval Medical University</h3>
+            <p><strong>Postdoctoral Researcher, Department of Pharmacognosy</strong></p>
+            <p class="muted small">Research focus: medicinal plant–microbe interactions</p>
 
-  <section id="projects">
-    <div class="section-title"><span>03</span><h2>项目经历</h2></div>
-    <div class="project"><div><strong>项目一</strong><p>这里填写项目介绍、你的工作与结果。</p></div><div>↗</div></div>
-    <div class="project"><div><strong>项目二</strong><p>可以展示课程项目、论文、代码作品或数据分析案例。</p></div><div>↗</div></div>
-  </section>
+            <div class="institution-card">
+              <div class="copy">
+                <strong>Naval Medical University</strong>
+                <p class="muted small">
+                  Postdoctoral research in pharmacognosy, with current work centered on interactions
+                  between medicinal plants and associated microorganisms.
+                </p>
+              </div>
+              <img src="assets/naval-medical-university.png" alt="Naval Medical University campus" />
+            </div>
+          </div>
+        </div>
 
-  <section id="contact">
-    <div class="contact">
-      <div class="tag">Contact</div>
-      <h2>保持联系</h2>
-      <p>Email：yourname@example.com</p>
-      <p>GitHub：稍后添加</p>
-    </div>
-  </section>
-</main>
+        <div class="timeline-row">
+          <div class="date">2019 – 2020</div>
+          <div class="timeline-content">
+            <h3>Clifford Hospital, Guangdong</h3>
+            <p><strong>Department of Pharmacy</strong></p>
+            <p class="muted small">Professional experience in a hospital pharmacy setting.</p>
 
-<footer class="wrap">
-  <span>© 2026 ZPU</span>
-  <span>zpu.bbroot.com</span>
+            <div class="experience-card">
+              <div>
+                <strong>Hospital Pharmacy Experience</strong>
+                <p class="muted small">
+                  Professional experience in the Department of Pharmacy at Clifford Hospital,
+                  providing practical exposure to hospital pharmacy operations and pharmaceutical services.
+                </p>
+              </div>
+              <img src="assets/clifford-hospital.png" alt="Clifford Hospital, Guangdong" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="publication">
+        <div class="pub-visual">Publication Figure</div>
+        <div>
+          <div class="pub-title">Publication title to be added</div>
+          <div class="pub-meta">Zhu Zi-hao, et al.</div>
+          <div class="pub-meta">Journal · Year</div>
+          <div class="pub-links">
+            <a href="#">Paper</a>
+            <a href="#">PDF</a>
+            <a href="#">Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="placeholder">
+        Publications can later be presented with a figure, title, authors, journal, year,
+        and links to the paper, PDF, supplementary information, data, code, or project page.
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Research Projects</h2>
+      <div class="placeholder">
+        Ongoing and completed research projects can be added here, including medicinal plant studies,
+        microbial isolation and identification, microbiome analyses, metabolite profiling, and related experimental work.
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:zh6876@126.com">zh6876@126.com</a></p>
+      <p>Website: <a href="https://zgpt.de5.net/">zgpt.de5.net</a></p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">© 2026 Zhu Zi-hao · Academic Homepage</div>
 </footer>
+
 </body>
 </html>
